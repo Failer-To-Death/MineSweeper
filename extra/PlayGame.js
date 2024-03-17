@@ -1,5 +1,4 @@
 
-
 function makeRows(rows, cols) {
     container.style.setProperty('--grid-rows', rows);
     container.style.setProperty('--grid-cols', cols);
@@ -7,9 +6,25 @@ function makeRows(rows, cols) {
         let cell = document.createElement("div");
         //number cells 
         cell.innerText = (c + 1);
+        cell.id = (c)
         container.appendChild(cell).className = "grid-item";
+        clickCell(cell);
     };
 };
+
+
+
+function clickCell(c) {
+    c.addEventListener('click', function(event) {
+        this.style.backgroundColor = 'lightGrey';
+    });
+}
+
+function reload(){
+    window.location.reload();
+}
+
+
 
 /*
 const para = document.getElementById("test");
